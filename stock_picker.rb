@@ -5,7 +5,6 @@ def stock_picker(price_list)
   working_list = Array.new
   working_list << price_list
   working_list.flatten!
-  binding.pry
   sales = Hash.new(0)
 
   price_list.each_with_index do |price, index|
@@ -23,4 +22,4 @@ def stock_picker(price_list)
   sales[sales.keys.max]
 end
 
-stock_picker([17,3,6,9,15,8,6,1,10])
+stock_picker([250,12,85,55,12,15,2])
