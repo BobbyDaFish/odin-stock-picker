@@ -2,7 +2,10 @@ require 'pry-byebug'
 
 
 def stock_picker(price_list)
-  working_list = price_list
+  working_list = Array.new
+  working_list << price_list
+  working_list.flatten!
+  binding.pry
   sales = Hash.new(0)
 
   price_list.each_with_index do |price, index|
@@ -12,8 +15,7 @@ def stock_picker(price_list)
     working_list.each_with_index do |w_price,w_index|
       if (w_price - price) > best_sale
         best_sale = (w_price - price)
-        binding.pry
-        best_sale_index = [index, w_index + 1]
+        best_sale_index = [index, price_list.index(w_price)]
       end
     end
     sales[best_sale] = best_sale_index
