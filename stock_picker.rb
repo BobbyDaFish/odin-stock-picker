@@ -1,6 +1,3 @@
-require 'pry-byebug' 
-
-
 def stock_picker(price_list)
   working_list = Array.new
   working_list << price_list
