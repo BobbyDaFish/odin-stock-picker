@@ -20,7 +20,7 @@ def stock_picker(price_list)
     end
     sales[best_sale] = best_sale_index
   end
-  sales
+  sales[sales.keys.max]
 end
 
 stock_picker([17,3,6,9,15,8,6,1,10])
